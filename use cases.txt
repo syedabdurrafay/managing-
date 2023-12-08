@@ -1,5 +1,20 @@
-use case 2
-grading
+User
+Student grading system description and formula
 
 
+A student grading system typically involves assigning grades to students based on their performance in assessments. 
+Commonly used letter grades include A, B, C, D, and F, with corresponding grade point values.
+The formula for calculating a student's GPA (Grade Point Average) is often used to represent overall academic performance. 
+GPA is calculated by assigning a numerical value to each letter grade, and then averaging these values.
 
+For example:
+A: 4.0
+B: 3.0
+C: 2.0
+D: 1.0
+F: 0.0
+The GPA is calculated by summing up the grade points earned in each course and dividing it by the total number of courses. 
+Some systems may also consider the credit hours of each course in the calculation.
+GPA = (Σ (Grade Points * Credit Hours)) / Total Credit Hours
+This formula provides a quantitative representation of a student's academic performance, making it easier to assess and compare students. 
+Different educational institutions may have variations in grading scales and GPA calculation methods.
