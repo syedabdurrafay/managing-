@@ -1,0 +1,24 @@
+
+
+use case #1 
+
+
+Registering New Student:
+Description: Capture and store information for new students, including personal details, contact information, and academic history.
+Actions: Input new student data into the system, validate the information, and generate a unique student identifier.
+
+Deleting Student Data:
+Description: Remove a student's information from the system when they withdraw or graduate.
+Actions: Locate and delete the student record, ensuring compliance with data protection regulations.
+
+Upgrading Student Data:
+Description: Update student information due to changes such as a change of address or a new academic achievement.
+Actions: Modify existing student records, validate the updated data, and ensure it is reflected accurately in the system.
+
+Showing Student Data:
+Description: Display detailed information about a specific student for administrative purposes.
+Actions: Retrieve and present the student's data, including personal details, enrollment status, and academic records, on-demand.
+
+Searching for Student Data:
+Description: Locate specific student records based on criteria such as name, ID number, or course enrollment.
+Actions: Implement a search functionality to query the database and retrieve relevant student information efficiently.
