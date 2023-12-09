@@ -1,2 +1,7 @@
-use case time table
-656565
+
+use case2 timetable 
+
+class timetable is a structured schedule that outlines the timing and sequence of academic classes for a student. 
+It typically includes details such as the days of the week, specific times for each class, and the corresponding subjects or courses.
+The timetable serves as a visual aid to help students organize and manage their academic commitments,
+ensuring they attend classes at the designated times and allowing for effective planning of study sessions and other activities.
