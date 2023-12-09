@@ -1,4 +1,5 @@
 
+HEAD
 
 
 use case #1 
@@ -44,4 +45,12 @@ Some systems may also consider the credit hours of each course in the calculatio
 GPA = (Σ (Grade Points * Credit Hours)) / Total Credit Hours
 This formula provides a quantitative representation of a student's academic performance, making it easier to assess and compare students. 
 Different educational institutions may have variations in grading scales and GPA calculation methods.
->>>>>>> farhan_branch
+ farhan_branch
+ 
+use case2 timetable 
+
+class timetable is a structured schedule that outlines the timing and sequence of academic classes for a student. 
+It typically includes details such as the days of the week, specific times for each class, and the corresponding subjects or courses.
+The timetable serves as a visual aid to help students organize and manage their academic commitments,
+ensuring they attend classes at the designated times and allowing for effective planning of study sessions and other activities.
+musab
