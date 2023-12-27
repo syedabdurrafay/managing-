@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 27, 2023 at 10:31 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Dec 27, 2023 at 03:13 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `student`
+-- Database: `test`
 --
 
 -- --------------------------------------------------------
@@ -28,11 +28,22 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `grading` (
-  `id` int(30) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `course` varchar(50) NOT NULL,
-  `result` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `S.id` int(30) NOT NULL,
+  `S.Name` varchar(50) NOT NULL,
+  `Course` varchar(50) NOT NULL,
+  `Grade` varchar(30) NOT NULL,
+  `Result` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `grading`
+--
+
+INSERT INTO `grading` (`S.id`, `S.Name`, `Course`, `Grade`, `Result`) VALUES
+(1, 'Farhan Iftikhar', 'English', 'A', 'Pass'),
+(2, 'Abdul Rafay ', 'Software Requirement Engineering', 'B', 'Pass'),
+(3, 'Muhammad Musab', 'Islamiat', 'B', 'Pass'),
+(4, 'Noman Khan', 'Pakistan Studies', 'C', 'Pass');
 
 -- --------------------------------------------------------
 
@@ -46,17 +57,17 @@ CREATE TABLE `registration` (
   `Phone no` int(30) NOT NULL,
   `Father name` varchar(30) NOT NULL,
   `Email` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `registration`
 --
 
 INSERT INTO `registration` (`id`, `Name`, `Phone no`, `Father name`, `Email`) VALUES
-(1, 'syed rafay', 312287132, 'sohail arshad ', 'syedrafay507@gmail.c'),
-(2, 'farhan ifti', 329807654, 'iftikhar ', 'farhan@gmail.com'),
-(3, 'musab ', 356786464, 'akbar ali ', 'musab@gmail.com'),
-(4, 'ammar ', 345362784, 'nadeem ', 'ammar@gmail.com');
+(1, 'Syed Rafay', 312287132, 'Sohail Arshad ', 'syedrafay507@gmail.c'),
+(2, 'Farhan Iftikhar', 329807654, 'Iftikhar Husain', 'farhan@gmail.com'),
+(3, 'Muhammad Musab ', 356786464, 'Akbar Ali ', 'musab@gmail.com'),
+(4, 'Ammar  Khan', 345362784, 'Nadeem ', 'ammar@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -72,7 +83,7 @@ CREATE TABLE `time_table` (
   `friday` varchar(50) NOT NULL,
   `saturday` varchar(50) NOT NULL,
   `sunday` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
@@ -82,7 +93,7 @@ CREATE TABLE `time_table` (
 -- Indexes for table `grading`
 --
 ALTER TABLE `grading`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`S.id`);
 
 --
 -- Indexes for table `registration`
@@ -98,7 +109,7 @@ ALTER TABLE `registration`
 -- AUTO_INCREMENT for table `grading`
 --
 ALTER TABLE `grading`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `S.id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `registration`
