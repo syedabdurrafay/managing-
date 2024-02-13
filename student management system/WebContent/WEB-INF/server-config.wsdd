@@ -7,8 +7,8 @@
   <ns1:parameter name="dotNetSoapEncFix" value="true"/>
   <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
   <ns1:parameter name="sendXMLDeclaration" value="true"/>
-  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
   <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
   <ns1:requestFlow>
    <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
     <ns1:parameter name="scope" value="session"/>
@@ -32,57 +32,90 @@
   <ns1:parameter name="allowedMethods" value="getVersion"/>
   <ns1:parameter name="className" value="org.apache.axis.Version"/>
  </ns1:service>
- <ns1:service name="Registration" provider="java:RPC" style="wrapped" use="literal">
-  <ns2:operation name="register" qname="ns1:register" returnQName="ns1:registerReturn" returnType="xsd:string" soapAction="" xmlns:ns1="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
-   <ns2:parameter qname="ns1:name" type="xsd:string"/>
-   <ns2:parameter qname="ns1:fathername" type="xsd:string"/>
-   <ns2:parameter qname="ns1:email" type="xsd:string"/>
-   <ns2:parameter qname="ns1:contact" type="xsd:int"/>
-   <ns2:parameter qname="ns1:department" type="xsd:string"/>
-   <ns2:parameter qname="ns1:semester" type="xsd:int"/>
-   <ns2:parameter qname="ns1:address" type="xsd:string"/>
-   <ns2:parameter qname="ns1:enrollno" type="xsd:int"/>
+ <ns1:service name="GradingDelete" provider="java:RPC" style="wrapped" use="literal">
+  <ns2:operation name="delete" qname="ns1:delete" returnQName="ns1:deleteReturn" returnType="xsd:string" soapAction="" xmlns:ns1="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
+   <ns2:parameter qname="ns1:Student_Name" type="xsd:string"/>
+   <ns2:parameter qname="ns1:Course_ID" type="xsd:string"/>
   </ns2:operation>
-  <ns1:parameter name="allowedMethods" value="register"/>
+  <ns1:parameter name="allowedMethods" value="delete"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="wsdlPortType" value="Registration"/>
-  <ns1:parameter name="className" value="main.Registration"/>
-  <ns1:parameter name="wsdlServicePort" value="Registration"/>
+  <ns1:parameter name="wsdlPortType" value="GradingDelete"/>
+  <ns1:parameter name="className" value="main.GradingDelete"/>
+  <ns1:parameter name="wsdlServicePort" value="GradingDelete"/>
   <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
+  <ns1:parameter name="wsdlServiceElement" value="GradingDeleteService"/>
+ </ns1:service>
+ <ns1:service name="Registration" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="register" qname="ns2:register" returnQName="ns2:registerReturn" returnType="xsd:string" soapAction="" xmlns:ns2="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns2:name" type="xsd:string"/>
+   <ns1:parameter qname="ns2:fathername" type="xsd:string"/>
+   <ns1:parameter qname="ns2:email" type="xsd:string"/>
+   <ns1:parameter qname="ns2:contact" type="xsd:int"/>
+   <ns1:parameter qname="ns2:department" type="xsd:string"/>
+   <ns1:parameter qname="ns2:semester" type="xsd:int"/>
+   <ns1:parameter qname="ns2:address" type="xsd:string"/>
+   <ns1:parameter qname="ns2:enrollno" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="register"/>
+  <ns1:parameter name="wsdlPortType" value="Registration"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlServicePort" value="Registration"/>
+  <ns1:parameter name="className" value="main.Registration"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="RegistrationService"/>
  </ns1:service>
- <ns1:service name="StudentManagementSystem" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="main" qname="ns2:main" soapAction="" xmlns:ns2="http://main">
-   <ns1:parameter qname="ns2:args" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+ <ns1:service name="GradingInsert" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="insert" qname="ns3:insert" returnQName="ns3:insertReturn" returnType="xsd:string" soapAction="" xmlns:ns3="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns3:Student_Name" type="xsd:string"/>
+   <ns1:parameter qname="ns3:Course_ID" type="xsd:string"/>
+   <ns1:parameter qname="ns3:Course" type="xsd:string"/>
+   <ns1:parameter qname="ns3:Grade" type="xsd:string"/>
+   <ns1:parameter qname="ns3:Result" type="xsd:string"/>
   </ns1:operation>
-  <ns1:operation name="update" qname="ns3:update" soapAction="" xmlns:ns3="http://main"/>
-  <ns1:operation name="search" qname="ns4:search" soapAction="" xmlns:ns4="http://main"/>
-  <ns1:operation name="deleteRecord" qname="ns5:deleteRecord" soapAction="" xmlns:ns5="http://main"/>
-  <ns1:operation name="show" qname="ns6:show" soapAction="" xmlns:ns6="http://main"/>
-  <ns1:operation name="enter" qname="ns7:enter" soapAction="" xmlns:ns7="http://main"/>
-  <ns1:parameter name="allowedMethods" value="search show update main enter deleteRecord"/>
+  <ns1:parameter name="allowedMethods" value="insert"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="wsdlPortType" value="StudentManagementSystem"/>
-  <ns1:parameter name="className" value="main.StudentManagementSystem"/>
-  <ns1:parameter name="wsdlServicePort" value="StudentManagementSystem"/>
+  <ns1:parameter name="wsdlPortType" value="GradingInsert"/>
+  <ns1:parameter name="className" value="main.GradingInsert"/>
+  <ns1:parameter name="wsdlServicePort" value="GradingInsert"/>
   <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
+  <ns1:parameter name="wsdlServiceElement" value="GradingInsertService"/>
+ </ns1:service>
+ <ns1:service name="GradingUpdate" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="update" qname="ns4:update" returnQName="ns4:updateReturn" returnType="xsd:string" soapAction="" xmlns:ns4="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns4:Student_Name" type="xsd:string"/>
+   <ns1:parameter qname="ns4:Course_ID" type="xsd:string"/>
+   <ns1:parameter qname="ns4:Grade" type="xsd:string"/>
+   <ns1:parameter qname="ns4:Result" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="update"/>
+  <ns1:parameter name="wsdlPortType" value="GradingUpdate"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlServicePort" value="GradingUpdate"/>
+  <ns1:parameter name="className" value="main.GradingUpdate"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
+  <ns1:parameter name="wsdlServiceElement" value="GradingUpdateService"/>
+ </ns1:service>
+ <ns1:service name="StudentManagementSystem" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="main" qname="ns5:main" soapAction="" xmlns:ns5="http://main">
+   <ns1:parameter qname="ns5:args" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="update" qname="ns6:update" soapAction="" xmlns:ns6="http://main"/>
+  <ns1:operation name="search" qname="ns7:search" soapAction="" xmlns:ns7="http://main"/>
+  <ns1:operation name="deleteRecord" qname="ns8:deleteRecord" soapAction="" xmlns:ns8="http://main"/>
+  <ns1:operation name="show" qname="ns9:show" soapAction="" xmlns:ns9="http://main"/>
+  <ns1:operation name="enter" qname="ns10:enter" soapAction="" xmlns:ns10="http://main"/>
+  <ns1:parameter name="allowedMethods" value="search show update main enter deleteRecord"/>
+  <ns1:parameter name="wsdlPortType" value="StudentManagementSystem"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlServicePort" value="StudentManagementSystem"/>
+  <ns1:parameter name="className" value="main.StudentManagementSystem"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="StudentManagementSystemService"/>
- </ns1:service>
- <ns1:service name="Information_student" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="getregistration" qname="ns8:getregistration" returnQName="ns8:getregistrationReturn" returnType="ns8:Student" soapAction="" xmlns:ns8="http://main">
-   <ns1:parameter qname="ns8:studentName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-  </ns1:operation>
-  <ns1:parameter name="allowedMethods" value="getregistration"/>
-  <ns1:parameter name="wsdlPortType" value="Information_student"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="schemaQualified" value="http://main"/>
-  <ns1:parameter name="wsdlServicePort" value="Information_student"/>
-  <ns1:parameter name="className" value="main.Information_student"/>
-  <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
-  <ns1:parameter name="wsdlServiceElement" value="Information_studentService"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns9:Student" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:main.Student" xmlns:ns9="http://main"/>
  </ns1:service>
  <ns1:transport name="http">
   <ns1:requestFlow>
