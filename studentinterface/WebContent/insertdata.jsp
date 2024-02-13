@@ -9,7 +9,7 @@
 <body>
 <h1>student registration portal </h1>
 
-<form action="delete.jsp">
+<form action="insertdatacallback.jsp">
 <label>student name </label>
 <input name="name" type="text"></input>
 <label>father name  </label>
@@ -24,15 +24,14 @@
 <label>department  </label>
 
 <input name="department" type="text"></input>
+
 <label>semester </label>
-
 <input name="semester" type="text"></input>
+
 <label>address </label>
-
-
 <input name="address" type="text"></input>
-<label>enrollment year  </label>
 
+<label>enrollment year  </label>
 <input name="enrollmenty" type="text"></input>
 
 
