@@ -1,0 +1,32 @@
+package main;
+import java.sql.*;
+
+public class Information {
+	public String getregistration(String student)
+	
+	{
+		 try{
+			 Class.forName("com.mysql.jdbc.Driver");
+			 Connection con =
+			 DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");
+			 Statement stmt=con.createStatement();
+			 ResultSet rs=stmt.executeQuery("SELECT  time_table.Student_ID , courses.Course_Name , time_table.DayOfWeek ,  time_table.StartTime,  time_table.EndTime\r\n" + 
+			 		"FROM time_table time_table\r\n" + 
+			 		"JOIN students students ON time_table.Student_ID = students.Student_ID\r\n" + 
+			 		"JOIN courses courses  ON time_table.Course_ID = courses.Course_ID\r\n" + 
+			 		"WHERE students.Student_Name =  + ' "+ student +"';");
+
+			rs.next();
+			 String registration="registration " + rs.getString(1) +  "  " + rs.getString(2) + "  "+ rs.getInt(3) + "  "+ rs.getInt(4) + "  " + rs.getInt(5) + "  "+ rs.getInt(6) + "  "+ rs.getInt(7) + "  "+ rs.getInt(8) + "  "     
+			 + rs.getString(9);
+			
+			 con.close();
+			 return registration;
+			 } catch(Exception e)
+			 {
+			 System.out.println(e);
+			 
+			 }
+		 return "";
+	}
+}
