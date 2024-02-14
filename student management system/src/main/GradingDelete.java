@@ -1,26 +1,12 @@
+/**
+ * GradingDelete.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
+ */
+
 package main;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
-public class GradingDelete {
-	
 
-	
-	    public String delete(String Student_Name, String Course_ID) {
-	        try {
-	            Class.forName("com.mysql.jdbc.Driver");
-	            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "");
-	            Statement stmt = con.createStatement();
-
-	            // Modify the query for DELETE operation
-	            String query = "DELETE FROM grading WHERE Student_Name = '" + Student_Name + "' AND Course_ID = '" + Course_ID + "'";
-	            
-	            stmt.executeUpdate(query);
-	        } catch (Exception e) {
-	            System.out.println(e);
-	        }
-	        return "";
-	    }
-	}
-
-
+public interface GradingDelete extends java.rmi.Remote {
+    public java.lang.String delete(java.lang.String student_Name, java.lang.String course_ID) throws java.rmi.RemoteException;
+}
