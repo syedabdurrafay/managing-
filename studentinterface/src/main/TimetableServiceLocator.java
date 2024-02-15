@@ -1,5 +1,5 @@
 /**
- * GradingInsertServiceLocator.java
+ * TimetableServiceLocator.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
@@ -7,53 +7,53 @@
 
 package main;
 
-public class GradingInsertServiceLocator extends org.apache.axis.client.Service implements main.GradingInsertService {
+public class TimetableServiceLocator extends org.apache.axis.client.Service implements main.TimetableService {
 
-    public GradingInsertServiceLocator() {
+    public TimetableServiceLocator() {
     }
 
 
-    public GradingInsertServiceLocator(org.apache.axis.EngineConfiguration config) {
+    public TimetableServiceLocator(org.apache.axis.EngineConfiguration config) {
         super(config);
     }
 
-    public GradingInsertServiceLocator(java.lang.String wsdlLoc, javax.xml.namespace.QName sName) throws javax.xml.rpc.ServiceException {
+    public TimetableServiceLocator(java.lang.String wsdlLoc, javax.xml.namespace.QName sName) throws javax.xml.rpc.ServiceException {
         super(wsdlLoc, sName);
     }
 
-    // Use to get a proxy class for GradingInsert
-    private java.lang.String GradingInsert_address = "http://localhost:8080/student_management_system/services/GradingInsert";
+    // Use to get a proxy class for Timetable
+    private java.lang.String Timetable_address = "http://localhost:8080/student_management_system/services/Timetable";
 
-    public java.lang.String getGradingInsertAddress() {
-        return GradingInsert_address;
+    public java.lang.String getTimetableAddress() {
+        return Timetable_address;
     }
 
     // The WSDD service name defaults to the port name.
-    private java.lang.String GradingInsertWSDDServiceName = "GradingInsert";
+    private java.lang.String TimetableWSDDServiceName = "Timetable";
 
-    public java.lang.String getGradingInsertWSDDServiceName() {
-        return GradingInsertWSDDServiceName;
+    public java.lang.String getTimetableWSDDServiceName() {
+        return TimetableWSDDServiceName;
     }
 
-    public void setGradingInsertWSDDServiceName(java.lang.String name) {
-        GradingInsertWSDDServiceName = name;
+    public void setTimetableWSDDServiceName(java.lang.String name) {
+        TimetableWSDDServiceName = name;
     }
 
-    public main.GradingInsert getGradingInsert() throws javax.xml.rpc.ServiceException {
+    public main.Timetable getTimetable() throws javax.xml.rpc.ServiceException {
        java.net.URL endpoint;
         try {
-            endpoint = new java.net.URL(GradingInsert_address);
+            endpoint = new java.net.URL(Timetable_address);
         }
         catch (java.net.MalformedURLException e) {
             throw new javax.xml.rpc.ServiceException(e);
         }
-        return getGradingInsert(endpoint);
+        return getTimetable(endpoint);
     }
 
-    public main.GradingInsert getGradingInsert(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
+    public main.Timetable getTimetable(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
         try {
-            main.GradingInsertSoapBindingStub _stub = new main.GradingInsertSoapBindingStub(portAddress, this);
-            _stub.setPortName(getGradingInsertWSDDServiceName());
+            main.TimetableSoapBindingStub _stub = new main.TimetableSoapBindingStub(portAddress, this);
+            _stub.setPortName(getTimetableWSDDServiceName());
             return _stub;
         }
         catch (org.apache.axis.AxisFault e) {
@@ -61,8 +61,8 @@ public class GradingInsertServiceLocator extends org.apache.axis.client.Service 
         }
     }
 
-    public void setGradingInsertEndpointAddress(java.lang.String address) {
-        GradingInsert_address = address;
+    public void setTimetableEndpointAddress(java.lang.String address) {
+        Timetable_address = address;
     }
 
     /**
@@ -72,9 +72,9 @@ public class GradingInsertServiceLocator extends org.apache.axis.client.Service 
      */
     public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
         try {
-            if (main.GradingInsert.class.isAssignableFrom(serviceEndpointInterface)) {
-                main.GradingInsertSoapBindingStub _stub = new main.GradingInsertSoapBindingStub(new java.net.URL(GradingInsert_address), this);
-                _stub.setPortName(getGradingInsertWSDDServiceName());
+            if (main.Timetable.class.isAssignableFrom(serviceEndpointInterface)) {
+                main.TimetableSoapBindingStub _stub = new main.TimetableSoapBindingStub(new java.net.URL(Timetable_address), this);
+                _stub.setPortName(getTimetableWSDDServiceName());
                 return _stub;
             }
         }
@@ -94,8 +94,8 @@ public class GradingInsertServiceLocator extends org.apache.axis.client.Service 
             return getPort(serviceEndpointInterface);
         }
         java.lang.String inputPortName = portName.getLocalPart();
-        if ("GradingInsert".equals(inputPortName)) {
-            return getGradingInsert();
+        if ("Timetable".equals(inputPortName)) {
+            return getTimetable();
         }
         else  {
             java.rmi.Remote _stub = getPort(serviceEndpointInterface);
@@ -105,7 +105,7 @@ public class GradingInsertServiceLocator extends org.apache.axis.client.Service 
     }
 
     public javax.xml.namespace.QName getServiceName() {
-        return new javax.xml.namespace.QName("http://main", "GradingInsertService");
+        return new javax.xml.namespace.QName("http://main", "TimetableService");
     }
 
     private java.util.HashSet ports = null;
@@ -113,7 +113,7 @@ public class GradingInsertServiceLocator extends org.apache.axis.client.Service 
     public java.util.Iterator getPorts() {
         if (ports == null) {
             ports = new java.util.HashSet();
-            ports.add(new javax.xml.namespace.QName("http://main", "GradingInsert"));
+            ports.add(new javax.xml.namespace.QName("http://main", "Timetable"));
         }
         return ports.iterator();
     }
@@ -123,8 +123,8 @@ public class GradingInsertServiceLocator extends org.apache.axis.client.Service 
     */
     public void setEndpointAddress(java.lang.String portName, java.lang.String address) throws javax.xml.rpc.ServiceException {
         
-if ("GradingInsert".equals(portName)) {
-            setGradingInsertEndpointAddress(address);
+if ("Timetable".equals(portName)) {
+            setTimetableEndpointAddress(address);
         }
         else 
 { // Unknown Port Name

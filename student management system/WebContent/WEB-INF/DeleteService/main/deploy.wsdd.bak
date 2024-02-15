@@ -21,7 +21,7 @@
       <parameter name="wsdlPortType" value="Delete"/>
       <parameter name="typeMappingVersion" value="1.2"/>
       <operation name="delete" qname="operNS:delete" xmlns:operNS="http://main" returnQName="retNS:deleteReturn" xmlns:retNS="http://main" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-        <parameter qname="pns:Course_ID" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:S_Name" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
       <parameter name="allowedMethods" value="delete"/>
 

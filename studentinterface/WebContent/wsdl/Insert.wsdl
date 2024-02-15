@@ -7,11 +7,10 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <element name="insert">
     <complexType>
      <sequence>
-      <element name="Student_Name" type="xsd:string"/>
       <element name="Course_ID" type="xsd:string"/>
-      <element name="Course" type="xsd:string"/>
-      <element name="Grade" type="xsd:string"/>
-      <element name="Result" type="xsd:string"/>
+      <element name="DayOfWeek" type="xsd:string"/>
+      <element name="StartTime" type="xsd:string"/>
+      <element name="EndTime" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
@@ -41,7 +40,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:portType name="GradingInsert">
+   <wsdl:portType name="Insert">
 
       <wsdl:operation name="insert">
 
@@ -57,7 +56,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:portType>
 
-   <wsdl:binding name="GradingInsertSoapBinding" type="impl:GradingInsert">
+   <wsdl:binding name="InsertSoapBinding" type="impl:Insert">
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
@@ -81,11 +80,11 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:binding>
 
-   <wsdl:service name="GradingInsertService">
+   <wsdl:service name="InsertService">
 
-      <wsdl:port binding="impl:GradingInsertSoapBinding" name="GradingInsert">
+      <wsdl:port binding="impl:InsertSoapBinding" name="Insert">
 
-         <wsdlsoap:address location="http://localhost:8080/student_management_system/services/GradingInsert"/>
+         <wsdlsoap:address location="http://localhost:8080/student_management_system/services/Insert"/>
 
       </wsdl:port>
 

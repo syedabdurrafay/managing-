@@ -4,50 +4,48 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://main" xmlns="http://www.w3.org/2001/XMLSchema">
-   <element name="update">
+   <element name="delete">
     <complexType>
      <sequence>
-      <element name="Course_ID" type="xsd:string"/>
-      <element name="newStartTime" type="xsd:string"/>
-      <element name="newEndTime" type="xsd:string"/>
+      <element name="S_Name" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
-   <element name="updateResponse">
+   <element name="deleteResponse">
     <complexType>
      <sequence>
-      <element name="updateReturn" type="xsd:string"/>
+      <element name="deleteReturn" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
   </schema>
  </wsdl:types>
 
-   <wsdl:message name="updateRequest">
+   <wsdl:message name="deleteResponse">
 
-      <wsdl:part element="impl:update" name="parameters">
-
-      </wsdl:part>
-
-   </wsdl:message>
-
-   <wsdl:message name="updateResponse">
-
-      <wsdl:part element="impl:updateResponse" name="parameters">
+      <wsdl:part element="impl:deleteResponse" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
-   <wsdl:portType name="Update">
+   <wsdl:message name="deleteRequest">
 
-      <wsdl:operation name="update">
+      <wsdl:part element="impl:delete" name="parameters">
 
-         <wsdl:input message="impl:updateRequest" name="updateRequest">
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Delete">
+
+      <wsdl:operation name="delete">
+
+         <wsdl:input message="impl:deleteRequest" name="deleteRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:updateResponse" name="updateResponse">
+         <wsdl:output message="impl:deleteResponse" name="deleteResponse">
 
        </wsdl:output>
 
@@ -55,21 +53,21 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:portType>
 
-   <wsdl:binding name="UpdateSoapBinding" type="impl:Update">
+   <wsdl:binding name="DeleteSoapBinding" type="impl:Delete">
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
-      <wsdl:operation name="update">
+      <wsdl:operation name="delete">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="updateRequest">
+         <wsdl:input name="deleteRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="updateResponse">
+         <wsdl:output name="deleteResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -79,11 +77,11 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:binding>
 
-   <wsdl:service name="UpdateService">
+   <wsdl:service name="DeleteService">
 
-      <wsdl:port binding="impl:UpdateSoapBinding" name="Update">
+      <wsdl:port binding="impl:DeleteSoapBinding" name="Delete">
 
-         <wsdlsoap:address location="http://localhost:8080/student_management_system/services/Update"/>
+         <wsdlsoap:address location="http://localhost:8080/student_management_system/services/Delete"/>
 
       </wsdl:port>
 

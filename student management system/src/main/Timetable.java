@@ -13,7 +13,7 @@ public class Timetable {
 				try{
 					 Class.forName("com.mysql.jdbc.Driver");
 					 Connection con =
-					 DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");
+					 DriverManager.getConnection("jdbc:mysql://localhost:3306/student","root","");
 					 Statement stmt=con.createStatement();
 					 String query = "insert into time_table(Course_ID,DayOfWeek,StartTime,EndTime) values('"+Course_ID+"','"+DayOfWeek+"','"+StartTime+"','"+EndTime+"')";
 					 

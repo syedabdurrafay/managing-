@@ -1,5 +1,5 @@
 /**
- * GradingDeleteSoapBindingStub.java
+ * TimetableSoapBindingStub.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
@@ -7,7 +7,7 @@
 
 package main;
 
-public class GradingDeleteSoapBindingStub extends org.apache.axis.client.Stub implements main.GradingDelete {
+public class TimetableSoapBindingStub extends org.apache.axis.client.Stub implements main.Timetable {
     private java.util.Vector cachedSerClasses = new java.util.Vector();
     private java.util.Vector cachedSerQNames = new java.util.Vector();
     private java.util.Vector cachedSerFactories = new java.util.Vector();
@@ -24,30 +24,34 @@ public class GradingDeleteSoapBindingStub extends org.apache.axis.client.Stub im
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("delete");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://main", "Student_Name"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
+        oper.setName("insert");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://main", "Course_ID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://main", "DayOfWeek"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://main", "StartTime"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://main", "EndTime"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         oper.setReturnClass(java.lang.String.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://main", "deleteReturn"));
+        oper.setReturnQName(new javax.xml.namespace.QName("http://main", "insertReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[0] = oper;
 
     }
 
-    public GradingDeleteSoapBindingStub() throws org.apache.axis.AxisFault {
+    public TimetableSoapBindingStub() throws org.apache.axis.AxisFault {
          this(null);
     }
 
-    public GradingDeleteSoapBindingStub(java.net.URL endpointURL, javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
+    public TimetableSoapBindingStub(java.net.URL endpointURL, javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
          this(service);
          super.cachedEndpoint = endpointURL;
     }
 
-    public GradingDeleteSoapBindingStub(javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
+    public TimetableSoapBindingStub(javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
         if (service == null) {
             super.service = new org.apache.axis.client.Service();
         } else {
@@ -89,7 +93,7 @@ public class GradingDeleteSoapBindingStub extends org.apache.axis.client.Stub im
         }
     }
 
-    public java.lang.String delete(java.lang.String student_Name, java.lang.String course_ID) throws java.rmi.RemoteException {
+    public java.lang.String insert(java.lang.String course_ID, java.lang.String dayOfWeek, java.lang.String startTime, java.lang.String endTime) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -101,11 +105,11 @@ public class GradingDeleteSoapBindingStub extends org.apache.axis.client.Stub im
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://main", "delete"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://main", "insert"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {student_Name, course_ID});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {course_ID, dayOfWeek, startTime, endTime});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;

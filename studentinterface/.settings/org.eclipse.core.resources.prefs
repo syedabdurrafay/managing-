@@ -1,5 +1,13 @@
 eclipse.preferences.version=1
+encoding//src/main/Delete.java=UTF-8
+encoding//src/main/DeleteService.java=UTF-8
+encoding//src/main/DeleteServiceLocator.java=UTF-8
+encoding//src/main/DeleteSoapBindingStub.java=UTF-8
 encoding//src/main/Register.java=UTF-8
 encoding//src/main/RegisterService.java=UTF-8
 encoding//src/main/RegisterServiceLocator.java=UTF-8
 encoding//src/main/RegisterSoapBindingStub.java=UTF-8
+encoding//src/main/Timetable.java=UTF-8
+encoding//src/main/TimetableService.java=UTF-8
+encoding//src/main/TimetableServiceLocator.java=UTF-8
+encoding//src/main/TimetableSoapBindingStub.java=UTF-8

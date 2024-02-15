@@ -7,7 +7,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <element name="delete">
     <complexType>
      <sequence>
-      <element name="Course_ID" type="xsd:string"/>
+      <element name="S_Name" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>

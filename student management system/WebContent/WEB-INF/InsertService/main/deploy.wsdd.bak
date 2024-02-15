@@ -10,22 +10,21 @@
     xmlns="http://xml.apache.org/axis/wsdd/"
     xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
 
-  <!-- Services from GradingInsertService WSDL service -->
+  <!-- Services from InsertService WSDL service -->
 
-  <service name="GradingInsert" provider="java:RPC" style="wrapped" use="literal">
+  <service name="Insert" provider="java:RPC" style="wrapped" use="literal">
       <parameter name="wsdlTargetNamespace" value="http://main"/>
-      <parameter name="wsdlServiceElement" value="GradingInsertService"/>
+      <parameter name="wsdlServiceElement" value="InsertService"/>
       <parameter name="schemaQualified" value="http://main"/>
-      <parameter name="wsdlServicePort" value="GradingInsert"/>
-      <parameter name="className" value="main.GradingInsertSoapBindingImpl"/>
-      <parameter name="wsdlPortType" value="GradingInsert"/>
+      <parameter name="wsdlServicePort" value="Insert"/>
+      <parameter name="className" value="main.InsertSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Insert"/>
       <parameter name="typeMappingVersion" value="1.2"/>
       <operation name="insert" qname="operNS:insert" xmlns:operNS="http://main" returnQName="retNS:insertReturn" xmlns:retNS="http://main" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-        <parameter qname="pns:Student_Name" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:Course_ID" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:Course" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:Grade" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:Result" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:DayOfWeek" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:StartTime" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:EndTime" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
       <parameter name="allowedMethods" value="insert"/>
 
